@@ -1,0 +1,26 @@
+<!--pages/my/index.wxml-->
+<import src="../../template/publishitem/publishitem.wxml"></import>
+<view class="container">
+  <view class="top">
+  <image class="icon" src="../../icons/boy.png"></image>
+  <view class="detail">
+  <view class="name">{{name}}</view>
+  <view class="introduction">{{introduction}}</view>
+  </view> 
+  <image class="setting" src="../../icons/setting.png"></image>
+  </view>
+  <view class="functions">
+  <view class="function" wx:for="{{functions}}" bindtap="handleFunction" data-path="{{item.path}}">
+    <image class="functionIcon" src="{{item.icon}}"></image>
+    <view class="functionName">{{item.text}}</view>
+  </view>
+  </view>
+  <view class="publish">
+  <view class="publishtop">
+  <view class="label">|</view>
+  <view class="text">我的发布</view>
+  <image class="more" src="../../icons/arrow.png"></image>
+  </view>
+  <template wx:for="{{myPublish}}" is="publishitem" data="{{item}}"></template>
+  </view>
+</view>
